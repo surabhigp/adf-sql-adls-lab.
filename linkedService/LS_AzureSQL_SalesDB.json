@@ -1,0 +1,23 @@
+{
+	"name": "LS_AzureSQL_SalesDB",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sql-retail-demo12.database.windows.net",
+			"database": "retaildb",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sql-admin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_KeyVault_Git",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sql-retail-secret"
+			}
+		}
+	}
+}
